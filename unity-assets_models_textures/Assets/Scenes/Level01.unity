@@ -2408,86 +2408,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1272045694}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &1420081092 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8085287225281234254, guid: 7a5beaaf81788834eace3bbe1aa220c8, type: 3}
-  m_PrefabInstance: {fileID: 7490700971050101131}
-  m_PrefabAsset: {fileID: 0}
---- !u!54 &1420081093
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1420081092}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 112
-  m_CollisionDetection: 0
---- !u!114 &1420081098
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1420081092}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Actions: {fileID: -944628639613478452, guid: f1eb0263aeba7b04e956587c7ee415ca, type: 3}
-  m_NotificationBehavior: 0
-  m_UIInputModule: {fileID: 0}
-  m_DeviceLostEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_DeviceRegainedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_ControlsChangedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_ActionEvents: []
-  m_NeverAutoSwitchControlSchemes: 0
-  m_DefaultControlScheme: 
-  m_DefaultActionMap: Player
-  m_SplitScreenIndex: -1
-  m_Camera: {fileID: 902534383}
---- !u!114 &1420081099
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1420081092}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a74459385a138f5489e336bb3e88f970, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 10
-  jumpForce: 10
-  groundLayer:
-    serializedVersion: 2
-    m_Bits: 64
-  onGround: 1
 --- !u!1 &1438064263
 GameObject:
   m_ObjectHideFlags: 0
@@ -3966,31 +3886,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8056599188455140078, guid: 7a5beaaf81788834eace3bbe1aa220c8, type: 3}
-      propertyPath: m_IsTrigger
-      value: 0
-      objectReference: {fileID: 0}
+    - target: {fileID: 5128929730557118934, guid: 7a5beaaf81788834eace3bbe1aa220c8, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 902534383}
     - target: {fileID: 8085287225281234254, guid: 7a5beaaf81788834eace3bbe1aa220c8, type: 3}
       propertyPath: m_Name
-      value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 8085287225281234254, guid: 7a5beaaf81788834eace3bbe1aa220c8, type: 3}
-      propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 8085287225281234254, guid: 7a5beaaf81788834eace3bbe1aa220c8, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1420081093}
-    - targetCorrespondingSourceObject: {fileID: 8085287225281234254, guid: 7a5beaaf81788834eace3bbe1aa220c8, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1420081099}
-    - targetCorrespondingSourceObject: {fileID: 8085287225281234254, guid: 7a5beaaf81788834eace3bbe1aa220c8, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1420081098}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7a5beaaf81788834eace3bbe1aa220c8, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
