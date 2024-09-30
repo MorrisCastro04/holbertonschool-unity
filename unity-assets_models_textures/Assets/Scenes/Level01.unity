@@ -2013,7 +2013,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1420081097}
-  rotationSpeed: 5
+  rotationSpeed: 15
 --- !u!1 &1033282112
 GameObject:
   m_ObjectHideFlags: 0
