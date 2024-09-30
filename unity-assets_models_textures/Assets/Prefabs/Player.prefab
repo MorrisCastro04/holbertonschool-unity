@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 3387054977030101659}
   - component: {fileID: 6342060880429984661}
   - component: {fileID: 5128929730557118934}
+  - component: {fileID: 5307487465953221848}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -150,14 +151,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
-  airControlFactor: 0.5
   jumpForce: 10
   cam: {fileID: 0}
   groundLayer:
     serializedVersion: 2
     m_Bits: 64
   onGround: 1
-  gravity: 9.8
 --- !u!114 &5128929730557118934
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -188,3 +187,16 @@ MonoBehaviour:
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!114 &5307487465953221848
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8085287225281234254}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ec71e263c4cbe1489e462c1ef9be325, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TimerText: {fileID: 0}
