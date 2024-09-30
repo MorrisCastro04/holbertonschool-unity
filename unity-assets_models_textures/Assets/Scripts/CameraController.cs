@@ -1,7 +1,5 @@
 using System.Collections;
 using UnityEngine;
-using UnityEngine.UIElements;
-using UnityEngine.InputSystem;
 
 public class CameraController : MonoBehaviour
 {
@@ -15,9 +13,10 @@ public class CameraController : MonoBehaviour
         offset = player.position - transform.position;
     }
 
-    void FixedUpdate()
+    void Update()
     {
         Quaternion rotation = Quaternion.AngleAxis(Input.GetAxis("Mouse X") * rotationSpeed, Vector3.up);
+        rotation *= Quaternion.AngleAxis(Input.GetAxis("Mouse Y") * rotationSpeed, Vector3.left);
         offset = rotation * offset;
         transform.position = player.position - offset;
         transform.LookAt(player);
