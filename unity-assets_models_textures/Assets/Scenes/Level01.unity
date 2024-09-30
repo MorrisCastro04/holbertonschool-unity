@@ -1918,6 +1918,7 @@ GameObject:
   - component: {fileID: 902534384}
   - component: {fileID: 902534383}
   - component: {fileID: 902534382}
+  - component: {fileID: 902534385}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1999,6 +2000,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 9, y: 0, z: 0}
+--- !u!114 &902534385
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 902534381}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3599cc184221654c99163236a54812d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 1420081097}
+  rotationSpeed: 5
 --- !u!1 &1033282112
 GameObject:
   m_ObjectHideFlags: 0
@@ -2408,6 +2423,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1272045694}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &1420081097 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 924291508715900698, guid: 7a5beaaf81788834eace3bbe1aa220c8, type: 3}
+  m_PrefabInstance: {fileID: 7490700971050101131}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1438064263
 GameObject:
   m_ObjectHideFlags: 0
@@ -3890,6 +3910,22 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 902534383}
+    - target: {fileID: 6342060880429984661, guid: 7a5beaaf81788834eace3bbe1aa220c8, type: 3}
+      propertyPath: cam
+      value: 
+      objectReference: {fileID: 902534384}
+    - target: {fileID: 6342060880429984661, guid: 7a5beaaf81788834eace3bbe1aa220c8, type: 3}
+      propertyPath: speed
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6342060880429984661, guid: 7a5beaaf81788834eace3bbe1aa220c8, type: 3}
+      propertyPath: jumpForce
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6342060880429984661, guid: 7a5beaaf81788834eace3bbe1aa220c8, type: 3}
+      propertyPath: airControlFactor
+      value: 0.9
+      objectReference: {fileID: 0}
     - target: {fileID: 8085287225281234254, guid: 7a5beaaf81788834eace3bbe1aa220c8, type: 3}
       propertyPath: m_Name
       value: Player
