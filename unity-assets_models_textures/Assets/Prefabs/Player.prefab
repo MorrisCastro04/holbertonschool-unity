@@ -151,7 +151,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
-  jumpForce: 10
+  jumpForce: 12
   cam: {fileID: 0}
   groundLayer:
     serializedVersion: 2
