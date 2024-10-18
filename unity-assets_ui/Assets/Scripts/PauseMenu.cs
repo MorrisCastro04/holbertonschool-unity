@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
 {
@@ -49,5 +50,17 @@ public class PauseMenu : MonoBehaviour
         playerController.enabled = true;
         timer.enabled = true;
         cameraController.enabled = true;
+    }
+    public void Restart()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+    public void MainMenu()
+    {
+        SceneManager.LoadScene(0);
+    }
+    public void Options()
+    {
+        SceneManager.LoadScene(1);
     }
 }

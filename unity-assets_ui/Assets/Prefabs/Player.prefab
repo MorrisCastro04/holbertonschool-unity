@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 6342060880429984661}
   - component: {fileID: 5128929730557118934}
   - component: {fileID: 5307487465953221848}
+  - component: {fileID: 4321044364395129783}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -200,3 +201,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TimerText: {fileID: 0}
+--- !u!114 &4321044364395129783
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8085287225281234254}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85c3fd00939a27346a7be434dfe86290, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pauseMenu: {fileID: 0}
