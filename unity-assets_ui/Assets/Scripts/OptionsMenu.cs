@@ -17,15 +17,30 @@ public class OptionsMenu : MonoBehaviour
         {
             invertToggleY.isOn = false;
         }
-        invertToggleY.onValueChanged.AddListener(delegate { ToggleInvertY(invertToggleY.isOn); });
+    }
+    public void Apply()
+    {
+        PlayerPrefs.SetInt("InvertY", invertToggleY.isOn ? 1 : 0);
+        PlayerPrefs.Save();
+
+        if (PlayerPrefs.HasKey("PreviousScene"))
+        {
+            SceneManager.LoadScene(PlayerPrefs.GetString("PreviousScene"));
+        }
+        else
+        {
+            SceneManager.LoadScene(0);
+        }
     }
     public void Back()
     {
-        SceneManager.LoadScene(0);
-    }
-    void ToggleInvertY(bool invertY)
-    {
-        PlayerPrefs.SetInt("InvertY", invertY ? 1 : 0);
-        PlayerPrefs.Save();
+        if (PlayerPrefs.HasKey("PreviousScene"))
+        {
+            SceneManager.LoadScene(PlayerPrefs.GetString("PreviousScene"));
+        }
+        else
+        {
+            SceneManager.LoadScene(0);
+        }
     }
 }
