@@ -6,7 +6,9 @@ using TMPro;
 
 public class Timer : MonoBehaviour
 {
+    public GameObject winCanvas;
     public TextMeshProUGUI TimerText;
+    public TextMeshProUGUI winText;
     float time;
     // Start is called before the first frame update
     void Start()
@@ -22,5 +24,10 @@ public class Timer : MonoBehaviour
         int seconds = Mathf.FloorToInt(time % 60F);
         float fraction = time * 100 % 100;
         TimerText.text = string.Format("{0:0}:{1:00}.{2:00}", minutes, seconds, fraction);
+    }
+    public void Win()
+    {
+        winText.text = TimerText.text;
+        TimerText.text = "";
     }
 }

@@ -5,11 +5,13 @@ using TMPro;
 
 public class WinTrigger : MonoBehaviour
 {
-    public TextMeshProUGUI winText;
+    public GameObject player;
+    // public Text timerText;
+    public GameObject winCanvas;
+    public GameObject MainCamara;
     // Start is called before the first frame update
     void Start()
     {
-
     }
 
     // Update is called once per frame
@@ -19,8 +21,11 @@ public class WinTrigger : MonoBehaviour
     }
     void OnTriggerEnter(Collider other)
     {
-        other.GetComponent<Timer>().enabled = false;
-        winText.fontSize = 60;
-        winText.color = Color.green;
+        winCanvas.SetActive(true);
+        player.GetComponent<Timer>().enabled = false;
+        player.GetComponent<PauseMenu>().enabled = false;
+        player.GetComponent<PlayerController>().enabled = false;
+        MainCamara.GetComponent<CameraController>().enabled = false;
+        player.GetComponent<Timer>().Win();
     }
 }
