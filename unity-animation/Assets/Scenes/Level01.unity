@@ -26505,7 +26505,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 924291508715900698, guid: 7a5beaaf81788834eace3bbe1aa220c8, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.6
+      value: 1.644998
       objectReference: {fileID: 0}
     - target: {fileID: 924291508715900698, guid: 7a5beaaf81788834eace3bbe1aa220c8, type: 3}
       propertyPath: m_LocalPosition.z
@@ -26567,10 +26567,6 @@ PrefabInstance:
       propertyPath: cam
       value: 
       objectReference: {fileID: 902534384}
-    - target: {fileID: 6342060880429984661, guid: 7a5beaaf81788834eace3bbe1aa220c8, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 8085287225281234254, guid: 7a5beaaf81788834eace3bbe1aa220c8, type: 3}
       propertyPath: m_Name
       value: Player
