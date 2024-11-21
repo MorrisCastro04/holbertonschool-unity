@@ -10,6 +10,7 @@ public class PauseMenu : MonoBehaviour
     public GameObject pauseMenu;
     PlayerController playerController;
     Timer timer;
+    [SerializeField]
     CameraController cameraController;
     bool isPaused = false;
     // Start is called before the first frame update
@@ -17,7 +18,6 @@ public class PauseMenu : MonoBehaviour
     {
         playerController = FindObjectOfType<PlayerController>();
         timer = FindObjectOfType<Timer>();
-        cameraController = GameObject.Find("Main Camera").GetComponent<CameraController>();
 
         PlayerPrefs.SetString("PreviousScene", SceneManager.GetActiveScene().name);
     }

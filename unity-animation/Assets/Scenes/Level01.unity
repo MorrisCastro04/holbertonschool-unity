@@ -5398,6 +5398,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 11932e57dbc2f3b4487ec1446aaf828c, type: 3}
   m_PrefabInstance: {fileID: 69555580}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &425805779 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3789594230434296863, guid: 26ff57afa01d4b14a81ebb9e808d78f2, type: 3}
+  m_PrefabInstance: {fileID: 1339950954919693610}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &428623574
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -26111,6 +26116,7 @@ GameObject:
   - component: {fileID: 2123979820}
   - component: {fileID: 2123979819}
   - component: {fileID: 2123979822}
+  - component: {fileID: 2123979823}
   m_Layer: 0
   m_Name: CutsceneCamera
   m_TagString: Untagged
@@ -26213,6 +26219,21 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &2123979823
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2123979818}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c38e31eab1a7f445819f3f63b155c9b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MainCamera: {fileID: 902534381}
+  Player: {fileID: 613430394}
+  Timer: {fileID: 425805779}
 --- !u!4 &2132297174 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: d78d6028b1d75644eb66a1488a73b0c3, type: 3}
@@ -26354,7 +26375,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3789594230434296863, guid: 26ff57afa01d4b14a81ebb9e808d78f2, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8046663874286747159, guid: 26ff57afa01d4b14a81ebb9e808d78f2, type: 3}
       propertyPath: m_fontAsset
@@ -26522,6 +26543,10 @@ PrefabInstance:
       propertyPath: pauseMenu
       value: 
       objectReference: {fileID: 1899716719}
+    - target: {fileID: 4321044364395129783, guid: 7a5beaaf81788834eace3bbe1aa220c8, type: 3}
+      propertyPath: cameraController
+      value: 
+      objectReference: {fileID: 902534385}
     - target: {fileID: 5128929730557118934, guid: 7a5beaaf81788834eace3bbe1aa220c8, type: 3}
       propertyPath: m_Camera
       value: 
@@ -26542,6 +26567,10 @@ PrefabInstance:
       propertyPath: cam
       value: 
       objectReference: {fileID: 902534384}
+    - target: {fileID: 6342060880429984661, guid: 7a5beaaf81788834eace3bbe1aa220c8, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8085287225281234254, guid: 7a5beaaf81788834eace3bbe1aa220c8, type: 3}
       propertyPath: m_Name
       value: Player
