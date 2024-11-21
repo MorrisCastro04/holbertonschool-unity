@@ -32,6 +32,11 @@ public class PlayerController : MonoBehaviour
     void FixedUpdate()
     {
         onGround = Physics.CheckSphere(transform.position + (Vector3.up * -0.4f), 0.7f, groundLayer);
+        if (onGround)
+        {
+            anim.SetBool("jump", false);
+            anim.SetBool("falling", false);
+        }
 
         if (!onGround)
         {
@@ -54,7 +59,11 @@ public class PlayerController : MonoBehaviour
         }
 
         if (transform.position.y < -10)
+        {
             transform.position = new Vector3(start.x, start.y * 20, start.z);
+            anim.SetBool("falling", true);
+            anim.SetBool("jump", true);
+        }
     }
     public void OnMove(InputValue value)
     {
@@ -71,7 +80,7 @@ public class PlayerController : MonoBehaviour
 
         if (onGround)
         {
-            anim.SetTrigger("jump");
+            anim.SetBool("jump", true);
             if (moveDir != Vector2.zero)
             {
                 Vector3 jumpDir = cam.forward * moveDir.y + cam.right * moveDir.x;
