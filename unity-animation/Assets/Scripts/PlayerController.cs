@@ -14,11 +14,13 @@ public class PlayerController : MonoBehaviour
     Vector2 _move;
     Vector3 move, start;
     Rigidbody rb;
+    Animator anim;
 
     void Awake()
     {
         rb = GetComponent<Rigidbody>();
         start = transform.position;
+        anim = GetComponentInChildren<Animator>();
     }
 
     private void OnDrawGizmos()
@@ -44,6 +46,8 @@ public class PlayerController : MonoBehaviour
 
             Quaternion targetRotation = Quaternion.LookRotation(move);
             transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * 10);
+
+            anim.SetBool("running", true);
         }
 
         if (transform.position.y < -10)
@@ -53,7 +57,10 @@ public class PlayerController : MonoBehaviour
     {
         _move = value.Get<Vector2>();
         if (_move.x == 0 && _move.y == 0)
+        {
             rb.velocity = Vector3.zero;
+            anim.SetBool("running", false);
+        }
     }
     public void OnJump()
     {
