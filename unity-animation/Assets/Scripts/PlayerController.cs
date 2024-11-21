@@ -34,7 +34,10 @@ public class PlayerController : MonoBehaviour
         onGround = Physics.CheckSphere(transform.position + (Vector3.up * -0.4f), 0.7f, groundLayer);
 
         if (!onGround)
+        {
             rb.AddForce(Vector3.up * -gravity, ForceMode.Acceleration);
+        }
+
         if (_move.x != 0 || _move.y != 0)
         {
             move = cam.forward * _move.y + cam.right * _move.x;
@@ -68,6 +71,7 @@ public class PlayerController : MonoBehaviour
 
         if (onGround)
         {
+            anim.SetTrigger("jump");
             if (moveDir != Vector2.zero)
             {
                 Vector3 jumpDir = cam.forward * moveDir.y + cam.right * moveDir.x;
