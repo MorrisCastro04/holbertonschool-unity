@@ -41,6 +41,9 @@ public class PlayerController : MonoBehaviour
 
             Vector3 horizontalVelocity = move * speed;
             rb.velocity = new Vector3(horizontalVelocity.x, rb.velocity.y, horizontalVelocity.z);
+
+            Quaternion targetRotation = Quaternion.LookRotation(move);
+            transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * 10);
         }
 
         if (transform.position.y < -10)
