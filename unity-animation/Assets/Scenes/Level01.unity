@@ -26539,10 +26539,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1095981130490110865, guid: 7a5beaaf81788834eace3bbe1aa220c8, type: 3}
-      propertyPath: m_Avatar
-      value: 
-      objectReference: {fileID: 9000000, guid: 165f6a1605d277d4ca6bfa52fa6856de, type: 3}
     - target: {fileID: 4321044364395129783, guid: 7a5beaaf81788834eace3bbe1aa220c8, type: 3}
       propertyPath: pauseMenu
       value: 
