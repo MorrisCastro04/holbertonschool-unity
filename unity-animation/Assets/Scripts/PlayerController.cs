@@ -17,6 +17,7 @@ public class PlayerController : MonoBehaviour
     Animator anim;
     bool isFalling = false;
     bool isJumping = false;
+    bool blockMove = false;
 
     void Awake()
     {
@@ -40,6 +41,16 @@ public class PlayerController : MonoBehaviour
             isFalling = false;
             isJumping = false;
             anim.SetBool("falling", false);
+        }
+
+        if (blockMove || isFalling)
+        {
+            if (anim.GetCurrentAnimatorStateInfo(0).IsName("Happy Idle") && !isFalling)
+            {
+                blockMove = false;
+            }
+            rb.velocity = new Vector3(0, rb.velocity.y, 0);
+            return;
         }
         if (!onGround)
         {
@@ -66,6 +77,7 @@ public class PlayerController : MonoBehaviour
             transform.position = new Vector3(start.x, start.y * 20, start.z);
             anim.SetBool("falling", true);
             anim.SetBool("jump", true);
+            blockMove = true;
             isFalling = true;
         }
     }
