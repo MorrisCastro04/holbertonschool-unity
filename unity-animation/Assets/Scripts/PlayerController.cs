@@ -15,6 +15,8 @@ public class PlayerController : MonoBehaviour
     Vector3 move, start;
     Rigidbody rb;
     Animator anim;
+    bool isFalling = false;
+    bool isJumping = false;
 
     void Awake()
     {
@@ -32,12 +34,13 @@ public class PlayerController : MonoBehaviour
     void FixedUpdate()
     {
         onGround = Physics.CheckSphere(transform.position + (Vector3.up * -0.4f), 0.7f, groundLayer);
+
         if (onGround)
         {
-            anim.SetBool("jump", false);
+            isFalling = false;
+            isJumping = false;
             anim.SetBool("falling", false);
         }
-
         if (!onGround)
         {
             rb.AddForce(Vector3.up * -gravity, ForceMode.Acceleration);
@@ -63,6 +66,7 @@ public class PlayerController : MonoBehaviour
             transform.position = new Vector3(start.x, start.y * 20, start.z);
             anim.SetBool("falling", true);
             anim.SetBool("jump", true);
+            isFalling = true;
         }
     }
     public void OnMove(InputValue value)
@@ -80,7 +84,8 @@ public class PlayerController : MonoBehaviour
 
         if (onGround)
         {
-            anim.SetBool("jump", true);
+            anim.SetTrigger("jump");
+            isJumping = true;
             if (moveDir != Vector2.zero)
             {
                 Vector3 jumpDir = cam.forward * moveDir.y + cam.right * moveDir.x;
