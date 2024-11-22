@@ -16,7 +16,6 @@ public class PlayerController : MonoBehaviour
     Rigidbody rb;
     Animator anim;
     bool isFalling = false;
-    bool isJumping = false;
     bool blockMove = false;
 
     void Awake()
@@ -39,7 +38,6 @@ public class PlayerController : MonoBehaviour
         if (onGround)
         {
             isFalling = false;
-            isJumping = false;
             anim.SetBool("falling", false);
         }
 
@@ -97,7 +95,6 @@ public class PlayerController : MonoBehaviour
         if (onGround)
         {
             anim.SetTrigger("jump");
-            isJumping = true;
             if (moveDir != Vector2.zero)
             {
                 Vector3 jumpDir = cam.forward * moveDir.y + cam.right * moveDir.x;
