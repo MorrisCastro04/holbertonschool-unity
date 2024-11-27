@@ -15,7 +15,6 @@ public class CutsceneController : MonoBehaviour
     void Start()
     {
         anim = GetComponent<Animator>();
-        anim.Play("Intro01");
     }
 
     // Update is called once per frame
