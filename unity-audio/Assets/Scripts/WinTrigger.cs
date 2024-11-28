@@ -10,6 +10,7 @@ public class WinTrigger : MonoBehaviour
     public GameObject winCanvas;
     public GameObject MainCamara;
     public GameObject music;
+    public AudioSource winSound;
     // Start is called before the first frame update
     void Start()
     {
@@ -29,5 +30,6 @@ public class WinTrigger : MonoBehaviour
         MainCamara.GetComponent<CameraController>().enabled = false;
         player.GetComponent<Timer>().Win();
         music.GetComponent<AudioSource>().Stop();
+        winSound.Play();
     }
 }
