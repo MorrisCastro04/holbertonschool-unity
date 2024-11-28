@@ -3,7 +3,11 @@ guid: 16c4dbce1559b4742875eaa2e60cc946
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - player: {fileID: 8085287225281234254, guid: 7a5beaaf81788834eace3bbe1aa220c8, type: 3}
+  - winCanvas: {instanceID: 0}
+  - MainCamara: {instanceID: 0}
+  - music: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
