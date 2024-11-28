@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour
     public LayerMask groundLayer;
     public bool onGround;
     public AudioSource audioSource;
+    public AudioSource LandingAudioSource;
     public AudioClip grassFootstepSound;
     public AudioClip rockFootstepSound;
     public string currentSurface = "grass";
@@ -22,6 +23,8 @@ public class PlayerController : MonoBehaviour
     Animator anim;
     bool isFalling = false;
     bool blockMove = false;
+    bool landingSoundPlayed = false;
+
 
     void Awake()
     {
@@ -38,7 +41,19 @@ public class PlayerController : MonoBehaviour
 
     void FixedUpdate()
     {
+
         onGround = Physics.CheckSphere(transform.position + (Vector3.up * -0.4f), 0.7f, groundLayer);
+
+        if (IsInLandingAnimation() && !landingSoundPlayed)
+        {
+            LandingAudioSource.Play();
+            landingSoundPlayed = true;
+        }
+
+        if (landingSoundPlayed && anim.GetCurrentAnimatorStateInfo(0).IsName("Happy Idle"))
+        {
+            landingSoundPlayed = false;
+        }
 
         if (onGround)
         {
@@ -140,9 +155,12 @@ public class PlayerController : MonoBehaviour
         {
             currentSurface = "grass";
         }
-        else if (collision.gameObject.CompareTag("stone"))
-        {
-            currentSurface = "rock";
-        }
+    }
+
+    private bool IsInLandingAnimation()
+    {
+        AnimatorStateInfo stateInfo = anim.GetCurrentAnimatorStateInfo(0);
+
+        return stateInfo.IsTag("Landing");
     }
 }
