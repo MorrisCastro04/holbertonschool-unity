@@ -10,6 +10,11 @@ public class PlayerController : MonoBehaviour
     public Transform cam;
     public LayerMask groundLayer;
     public bool onGround;
+    public AudioSource audioSource;
+    public AudioClip grassFootstepSound;
+    public AudioClip rockFootstepSound;
+    public string currentSurface = "grass";
+
     float gravity = 9.8f;
     Vector2 _move;
     Vector3 move, start;
@@ -50,9 +55,11 @@ public class PlayerController : MonoBehaviour
             rb.velocity = new Vector3(0, rb.velocity.y, 0);
             return;
         }
+
         if (!onGround)
         {
             rb.AddForce(Vector3.up * -gravity, ForceMode.Acceleration);
+            audioSource.Stop();
         }
 
         if (_move.x != 0 || _move.y != 0)
@@ -68,6 +75,18 @@ public class PlayerController : MonoBehaviour
             transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * 10);
 
             anim.SetBool("running", true);
+
+            if (onGround && !audioSource.isPlaying)
+            {
+                audioSource.clip = currentSurface == "grass" ? grassFootstepSound : rockFootstepSound;
+                audioSource.loop = true;
+                audioSource.Play();
+            }
+        }
+        else
+        {
+            anim.SetBool("running", false);
+            audioSource.Stop();
         }
 
         if (transform.position.y < -10)
@@ -79,6 +98,7 @@ public class PlayerController : MonoBehaviour
             isFalling = true;
         }
     }
+
     public void OnMove(InputValue value)
     {
         _move = value.Get<Vector2>();
@@ -86,15 +106,18 @@ public class PlayerController : MonoBehaviour
         {
             rb.velocity = Vector3.zero;
             anim.SetBool("running", false);
+            audioSource.Stop();
         }
     }
+
     public void OnJump()
     {
-        Vector2 moveDir = _move;
-
         if (onGround)
         {
             anim.SetTrigger("jump");
+            audioSource.Stop();
+
+            Vector2 moveDir = _move;
             if (moveDir != Vector2.zero)
             {
                 Vector3 jumpDir = cam.forward * moveDir.y + cam.right * moveDir.x;
@@ -108,6 +131,18 @@ public class PlayerController : MonoBehaviour
             {
                 rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
             }
+        }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("grass"))
+        {
+            currentSurface = "grass";
+        }
+        else if (collision.gameObject.CompareTag("stone"))
+        {
+            currentSurface = "rock";
         }
     }
 }
