@@ -17825,6 +17825,7 @@ MonoBehaviour:
   player: {fileID: 613430394}
   winCanvas: {fileID: 978991417}
   MainCamara: {fileID: 902534381}
+  music: {fileID: 1888853204}
 --- !u!1 &1478880119 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 7bceb5683dfaafe4a9c8dd9376c24d0e, type: 3}
@@ -22685,7 +22686,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
