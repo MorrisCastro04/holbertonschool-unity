@@ -9,6 +9,7 @@ public class OptionsMenu : MonoBehaviour
 {
     public Toggle invertToggleY;
     [SerializeField] private Slider BGMSlider;
+    [SerializeField] private Slider SFXSlider;
     [SerializeField] private AudioMixer audioMixer; // Referencia al AudioMixer
 
     void Start()
@@ -36,8 +37,21 @@ public class OptionsMenu : MonoBehaviour
             SetBGMVolume(0.75f);
         }
 
+        if (PlayerPrefs.HasKey("SFXVolume"))
+        {
+            float savedVolume = PlayerPrefs.GetFloat("SFXVolume");
+            SFXSlider.value = savedVolume;
+            SetSFXVolume(savedVolume);
+        }
+        else
+        {
+            SFXSlider.value = 0.75f; // Valor predeterminado (75%)
+            SetSFXVolume(0.75f);
+        }
+
         // Listener para cambios en el slider
         BGMSlider.onValueChanged.AddListener(SetBGMVolume);
+        SFXSlider.onValueChanged.AddListener(SetSFXVolume);
     }
 
     public void Apply()
@@ -47,6 +61,7 @@ public class OptionsMenu : MonoBehaviour
 
         // Guardar configuración del volumen BGM
         PlayerPrefs.SetFloat("BGMVolume", BGMSlider.value);
+        PlayerPrefs.SetFloat("SFXVolume", SFXSlider.value);
         PlayerPrefs.Save();
 
         // Regresar a la escena anterior
@@ -78,5 +93,12 @@ public class OptionsMenu : MonoBehaviour
         // Convert the slider value (0 to 1) to dB (-80 to 0)
         float dB = Mathf.Log10(Mathf.Clamp(sliderValue, 0.0001f, 1f)) * 20f;
         audioMixer.SetFloat("BGM", dB);
+    }
+
+    public void SetSFXVolume(float sliderValue)
+    {
+        // Convert the slider value (0 to 1) to dB (-80 to 0)
+        float dB = Mathf.Log10(Mathf.Clamp(sliderValue, 0.0001f, 1f)) * 20f;
+        audioMixer.SetFloat("SFX", dB);
     }
 }
