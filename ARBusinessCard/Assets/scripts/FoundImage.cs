@@ -2,16 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class elementsManager : MonoBehaviour
+public class FoundImage : MonoBehaviour
 {
+    Animator anim;
     // Start is called before the first frame update
     void Start()
     {
-        
+        anim = GetComponent<Animator>();
     }
 
-    public void google()
+    public void Found()
     {
-        Application.OpenURL("https://www.google.com");
+        anim.SetTrigger("Found");
     }
 }
