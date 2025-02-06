@@ -18,6 +18,7 @@ public class ChoosePlane : MonoBehaviour
     static ARPlane selectedPlane;
     bool gameStarted = false;
     List<ARRaycastHit> hits = new List<ARRaycastHit>();
+    private List<GameObject> capsules = new List<GameObject>();
     // Start is called before the first frame update
     void Start()
     {
@@ -75,12 +76,39 @@ public class ChoosePlane : MonoBehaviour
                 0.1f,
                 Random.Range(-3f, 3f) * selectedPlane.transform.localScale.z
             );
-            Instantiate(targetPrefab, randomPosition, Quaternion.identity);
+            GameObject capsule = Instantiate(targetPrefab, randomPosition, Quaternion.identity);
+            NavMeshAgent agent = capsule.AddComponent<NavMeshAgent>();
+
+            agent.speed = 0.5f;
+            agent.acceleration = 1.5f;
+            agent.angularSpeed = 120;
+            agent.stoppingDistance = 0.1f;
+            agent.autoBraking = false;
+
+            capsules.Add(capsule);
         }
+        InvokeRepeating("MoveCapsules", 1f, 3f);
 
         gameStarted = true;
         planeManager.enabled = false;
         startCanvas.gameObject.SetActive(false);
         BackGround.gameObject.SetActive(false);
+    }
+
+    void MoveCapsules()
+    {
+        foreach (var capsule in capsules)
+        {
+            NavMeshAgent agent = capsule.GetComponent<NavMeshAgent>();
+            if (agent != null)
+            {
+                Vector3 randomDestination = selectedPlane.transform.position + new Vector3(
+                    Random.Range(-3f, 3f) * selectedPlane.transform.localScale.x,
+                    0,
+                    Random.Range(-3f, 3f) * selectedPlane.transform.localScale.z
+                );
+                agent.SetDestination(randomDestination);
+            }
+        }
     }
 }
