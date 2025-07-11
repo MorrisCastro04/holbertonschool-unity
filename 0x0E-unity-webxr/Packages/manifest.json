@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "com.de-panther.webxr": "0.22.1",
     "com.de-panther.webxr-interactions": "0.22.0",
     "com.unity.collab-proxy": "2.8.2",
     "com.unity.ide.rider": "3.0.28",
@@ -13,6 +14,7 @@
     "com.unity.toolchain.win-x86_64-linux-x86_64": "2.0.10",
     "com.unity.ugui": "1.0.0",
     "com.unity.visualscripting": "1.9.4",
+    "com.unity.xr.interaction.toolkit": "2.5.4",
     "com.unity.modules.ai": "1.0.0",
     "com.unity.modules.androidjni": "1.0.0",
     "com.unity.modules.animation": "1.0.0",
