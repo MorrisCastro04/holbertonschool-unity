@@ -4,7 +4,7 @@
 PlayerSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 26
-  productGUID: 9c32385c26844154084b984148b91ac6
+  productGUID: 509a2a5750324d64f89170d7dc2d3126
   AndroidProfiler: 0
   AndroidFilterTouchesWhenObscured: 0
   AndroidEnableSustainedPerformanceMode: 0
@@ -140,9 +140,7 @@ PlayerSettings:
   visionOSBundleVersion: 1.0
   tvOSBundleVersion: 1.0
   bundleVersion: 0.1.0
-  preloadedAssets:
-  - {fileID: 11400000, guid: bfc1cd9b755396c44b3a15825a0f4158, type: 2}
-  - {fileID: -5286111023555800096, guid: cf6a3f67e03c73d4380335f89b7ffa8b, type: 2}
+  preloadedAssets: []
   metroInputSource: 0
   wsaTransparentSwapchain: 0
   m_HolographicPauseOnTrackingLoss: 1
@@ -919,10 +917,10 @@ PlayerSettings:
   apiCompatibilityLevel: 6
   activeInputHandler: 2
   windowsGamepadBackendHint: 0
-  cloudProjectId: 1b5860ab-63ae-4d56-b297-468a43f6a751
+  cloudProjectId: 925bf9ee-54de-4dd8-99f6-2bee056c8ab8
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
-  projectName: 0x0E-unity-webxr 2025-07-09_13-10-13
+  projectName: 0x0E-unity-webxr 2025-07-14_11-39-12
   organizationId: jomarcastro2004
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0

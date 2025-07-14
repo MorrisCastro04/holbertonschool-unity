@@ -1,8 +1,8 @@
 {
   "dependencies": {
     "com.de-panther.webxr": {
-      "version": "0.22.1",
-      "depth": 0,
+      "version": "0.22.0",
+      "depth": 1,
       "source": "registry",
       "dependencies": {
         "com.unity.xr.management": "3.2.13"
@@ -262,7 +262,7 @@
     },
     "com.unity.xr.management": {
       "version": "4.4.0",
-      "depth": 1,
+      "depth": 2,
       "source": "registry",
       "dependencies": {
         "com.unity.modules.vr": "1.0.0",
