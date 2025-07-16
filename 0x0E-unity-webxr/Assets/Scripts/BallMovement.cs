@@ -18,12 +18,22 @@ public class BallMovement : MonoBehaviour
 
     private InputAction moveLateralAction;
 
+    ObstacleSystem obstacleSystem;
+
     void Awake()
     {
         rb = GetComponent<Rigidbody>();
         if (rb == null)
         {
             Debug.LogError("La bola de bowling necesita un Rigidbody.");
+            enabled = false;
+            return;
+        }
+
+        obstacleSystem = GameObject.Find("obstacleSystem")?.GetComponent<ObstacleSystem>();
+        if (!obstacleSystem)
+        {
+            Debug.LogError("No se encontró el ObstacleSystem en la escena.");
             enabled = false;
             return;
         }
@@ -84,6 +94,7 @@ public class BallMovement : MonoBehaviour
         if (other.CompareTag("canal"))
         {
             SetControlLateralActivo(true);
+            obstacleSystem.SpawnObstacle();
         }
 
         if (other.CompareTag("SpeedPad"))
@@ -97,6 +108,7 @@ public class BallMovement : MonoBehaviour
         if (other.CompareTag("canal"))
         {
             SetControlLateralActivo(false);
+            obstacleSystem.ClearObstacles();
         }
     }
 }
