@@ -9,8 +9,12 @@ public class BallMovement : MonoBehaviour
 {
     public InputActionAsset bowlingControlsAsset;
     public float velocidadLateral = 5f;
+
+    public float speedMultiplier = 2f;
     private Rigidbody rb;
     private bool controlLateralActivo = false;
+
+    bool speedMultiplierActive = false;
 
     private InputAction moveLateralAction;
 
@@ -54,6 +58,11 @@ public class BallMovement : MonoBehaviour
         {
             Vector2 movimientoLateral = moveLateralAction.ReadValue<Vector2>();
 
+            if (speedMultiplierActive)
+            {
+                rb.velocity = new Vector3(rb.velocity.x, rb.velocity.y, rb.velocity.z * speedMultiplier);
+                speedMultiplierActive = false;
+            }
             Vector3 fuerzaLateral = transform.right * movimientoLateral * velocidadLateral;
 
             rb.AddForce(fuerzaLateral, ForceMode.Force);
@@ -75,6 +84,11 @@ public class BallMovement : MonoBehaviour
         if (other.CompareTag("canal"))
         {
             SetControlLateralActivo(true);
+        }
+
+        if (other.CompareTag("SpeedPad"))
+        {
+            speedMultiplierActive = true;
         }
     }
 

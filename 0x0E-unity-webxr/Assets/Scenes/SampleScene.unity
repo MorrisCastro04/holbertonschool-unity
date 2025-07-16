@@ -137,7 +137,40 @@ MonoBehaviour:
   bowlingControlsAsset: {fileID: -944628639613478452, guid: 2e83109f31feaa64fa6b3154a3d422ec,
     type: 3}
   velocidadLateral: 5
-  maxVelocidadLateral: 5
+  speedMultiplier: 2
+--- !u!1 &276900399
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 276900400}
+  m_Layer: 0
+  m_Name: SpeedBoost
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &276900400
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 276900399}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -9.816173, y: -0.8432046, z: -14.700759}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1443561055}
+  - {fileID: 1999586423}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &287862783 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6904935772979462566, guid: d8e6fe0920ab78d419517e66f91e1581,
@@ -1579,6 +1612,59 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!1 &1443561054
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1443561055}
+  - component: {fileID: 1443561056}
+  m_Layer: 0
+  m_Name: Pad
+  m_TagString: SpeedPad
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1443561055
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1443561054}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 276900400}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1443561056
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1443561054}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.93293095, y: 0.3934009, z: 1.0054865}
+  m_Center: {x: -1.2897544, y: 1.7523974, z: 3.2627797}
 --- !u!1001 &1452347033
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1952,7 +2038,7 @@ MonoBehaviour:
   bowlingControlsAsset: {fileID: -944628639613478452, guid: 2e83109f31feaa64fa6b3154a3d422ec,
     type: 3}
   velocidadLateral: 5
-  maxVelocidadLateral: 5
+  speedMultiplier: 2
 --- !u!114 &1452347054
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1968,7 +2054,7 @@ MonoBehaviour:
   bowlingControlsAsset: {fileID: -944628639613478452, guid: 2e83109f31feaa64fa6b3154a3d422ec,
     type: 3}
   velocidadLateral: 5
-  maxVelocidadLateral: 5
+  speedMultiplier: 2
 --- !u!135 &1495847750
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -2044,7 +2130,7 @@ MonoBehaviour:
   bowlingControlsAsset: {fileID: -944628639613478452, guid: 2e83109f31feaa64fa6b3154a3d422ec,
     type: 3}
   velocidadLateral: 5
-  maxVelocidadLateral: 5
+  speedMultiplier: 2
 --- !u!1 &1638839623 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6904935772072048960, guid: d8e6fe0920ab78d419517e66f91e1581,
@@ -2363,6 +2449,59 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1999586422
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1999586423}
+  - component: {fileID: 1999586424}
+  m_Layer: 0
+  m_Name: Pad (1)
+  m_TagString: SpeedPad
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1999586423
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1999586422}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 276900400}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1999586424
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1999586422}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 0.511137, z: 1}
+  m_Center: {x: 0, y: 1.6198885, z: 0}
 --- !u!114 &2032798919
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2378,7 +2517,7 @@ MonoBehaviour:
   bowlingControlsAsset: {fileID: -944628639613478452, guid: 2e83109f31feaa64fa6b3154a3d422ec,
     type: 3}
   velocidadLateral: 5
-  maxVelocidadLateral: 5
+  speedMultiplier: 2
 --- !u!43 &2092942050
 Mesh:
   m_ObjectHideFlags: 0
@@ -2556,3 +2695,4 @@ SceneRoots:
   - {fileID: 1452347033}
   - {fileID: 1281602741}
   - {fileID: 1885244514}
+  - {fileID: 276900400}

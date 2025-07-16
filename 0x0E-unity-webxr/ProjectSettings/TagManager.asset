@@ -7,6 +7,7 @@ TagManager:
   - pins
   - Interactable
   - canal
+  - SpeedPad
   layers:
   - Default
   - TransparentFX
