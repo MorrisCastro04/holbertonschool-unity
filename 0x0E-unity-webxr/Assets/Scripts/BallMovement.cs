@@ -20,12 +20,22 @@ public class BallMovement : MonoBehaviour
 
     ObstacleSystem obstacleSystem;
 
+    CameraController cameraController;
+
     void Awake()
     {
         rb = GetComponent<Rigidbody>();
         if (rb == null)
         {
             Debug.LogError("La bola de bowling necesita un Rigidbody.");
+            enabled = false;
+            return;
+        }
+
+        cameraController = GameObject.Find("Main Camera")?.GetComponent<CameraController>();
+        if (!cameraController)
+        {
+            Debug.LogError("No se encontró el CameraController en la cámara principal.");
             enabled = false;
             return;
         }
@@ -94,6 +104,7 @@ public class BallMovement : MonoBehaviour
         if (other.CompareTag("canal"))
         {
             SetControlLateralActivo(true);
+            cameraController.StartCoroutine(cameraController.CameraUP());
             obstacleSystem.SpawnObstacle();
         }
 
@@ -108,6 +119,8 @@ public class BallMovement : MonoBehaviour
         if (other.CompareTag("canal"))
         {
             SetControlLateralActivo(false);
+            cameraController.StartCoroutine(cameraController.CameraDown());
+            speedMultiplierActive = false;
             obstacleSystem.ClearObstacles();
         }
     }

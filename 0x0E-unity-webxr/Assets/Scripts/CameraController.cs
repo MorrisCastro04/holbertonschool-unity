@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -60,5 +61,51 @@ public class CameraController : MonoBehaviour
         moveAction.Disable();
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
+    }
+
+    public IEnumerator CameraUP()
+    {
+        Vector3 targetPosition = new Vector3(transform.position.x, 2.2f, transform.position.z);
+        Quaternion targetRotation = Quaternion.Euler(25f, transform.eulerAngles.y, 0f);
+
+        float duration = 1f;
+        float elapsed = 0f;
+
+        Vector3 startPosition = transform.position;
+        Quaternion startRotation = transform.rotation;
+
+        while (elapsed < duration)
+        {
+            transform.position = Vector3.Lerp(startPosition, targetPosition, elapsed / duration);
+            transform.rotation = Quaternion.Slerp(startRotation, targetRotation, elapsed / duration);
+            elapsed += Time.deltaTime;
+            yield return null;
+        }
+
+        transform.position = targetPosition;
+        transform.rotation = targetRotation;
+    }
+
+    public IEnumerator CameraDown()
+    {
+        Vector3 targetPosition = new Vector3(transform.position.x, 1.2f, transform.position.z);
+        Quaternion targetRotation = Quaternion.Euler(0f, transform.eulerAngles.y, 0f);
+
+        float duration = 1f;
+        float elapsed = 0f;
+
+        Vector3 startPosition = transform.position;
+        Quaternion startRotation = transform.rotation;
+
+        while (elapsed < duration)
+        {
+            transform.position = Vector3.Lerp(startPosition, targetPosition, elapsed / duration);
+            transform.rotation = Quaternion.Slerp(startRotation, targetRotation, elapsed / duration);
+            elapsed += Time.deltaTime;
+            yield return null;
+        }
+
+        transform.position = targetPosition;
+        transform.rotation = targetRotation;
     }
 }
