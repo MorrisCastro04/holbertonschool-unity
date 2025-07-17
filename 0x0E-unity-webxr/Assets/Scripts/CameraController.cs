@@ -88,7 +88,7 @@ public class CameraController : MonoBehaviour
 
     public IEnumerator CameraDown()
     {
-        Vector3 targetPosition = new Vector3(transform.position.x, 1.2f, transform.position.z);
+        Vector3 targetPosition = new Vector3(transform.position.x, 1.5f, transform.position.z);
         Quaternion targetRotation = Quaternion.Euler(0f, transform.eulerAngles.y, 0f);
 
         float duration = 1f;
